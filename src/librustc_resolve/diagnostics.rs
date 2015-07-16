@@ -201,7 +201,7 @@ http://doc.rust-lang.org/reference.html#types
 
 E0364: r##"
 Private items cannot be publicly re-exported.  This error indicates
-that you attempted to write a 'pub use' against a type or value that was
+that you attempted to write a `pub use` against a type or value that was
 not itself public.
 
 Here is an example that demonstrates the error:
@@ -214,7 +214,7 @@ pub use foo::X;
 ```
 
 The solution to this problem is to ensure that the items that you are
-re-exporting are themselves marked with 'pub':
+re-exporting are themselves marked with `pub`:
 
 ```
 mod foo {
@@ -223,7 +223,7 @@ mod foo {
 pub use foo::X;
 ```
 
-See the Use Declarations section of the reference for more information
+See the 'Use Declarations' section of the reference for more information
 on this topic:
 
 http://doc.rust-lang.org/reference.html#use-declarations
@@ -231,7 +231,7 @@ http://doc.rust-lang.org/reference.html#use-declarations
 
 E0365: r##"
 Private modules cannot be publicly re-exported.  This error indicates
-that you attempted to write a 'pub use' against a module that was
+that you attempted to write a `pub use` against a module that was
 not itself public.
 
 Here is an example that demonstrates the error:
@@ -244,7 +244,7 @@ pub use foo as foo2;
 
 ```
 The solution to this problem is to ensure that the module that you are
-re-exporting is itself marked with 'pub':
+re-exporting is itself marked with `pub`:
 
 ```
 pub mod foo {
@@ -253,7 +253,7 @@ pub mod foo {
 pub use foo as foo2;
 ```
 
-See the Use Declarations section of the reference for more information
+See the 'Use Declarations' section of the reference for more information
 on this topic:
 
 http://doc.rust-lang.org/reference.html#use-declarations
