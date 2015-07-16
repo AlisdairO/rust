@@ -200,9 +200,8 @@ http://doc.rust-lang.org/reference.html#types
 "##,
 
 E0364: r##"
-Private items cannot be publicly re-exported.  This error indicates
-that you attempted to write a `pub use` against a type or value that was
-not itself public.
+Private items cannot be publicly re-exported.  This error indicates that
+you attempted to `pub use` a type or value that was not itself public.
 
 Here is an example that demonstrates the error:
 
@@ -231,8 +230,7 @@ http://doc.rust-lang.org/reference.html#use-declarations
 
 E0365: r##"
 Private modules cannot be publicly re-exported.  This error indicates
-that you attempted to write a `pub use` against a module that was
-not itself public.
+that you attempted to `pub use` a module that was not itself public.
 
 Here is an example that demonstrates the error:
 
