@@ -197,6 +197,66 @@ See the Types section of the reference for more information about the primitive
 types:
 
 http://doc.rust-lang.org/reference.html#types
+"##,
+
+E0364: r##"
+Private items cannot be publicly re-exported.  This error indicates
+that you attempted to write a 'pub use' against a type or value that was
+not itself public.
+
+Here is an example that demonstrates the error:
+
+```
+mod foo {
+    const X: u32 = 1;
+}
+pub use foo::X;
+```
+
+The solution to this problem is to ensure that the items that you are
+re-exporting are themselves marked with 'pub':
+
+```
+mod foo {
+    pub const X: u32 = 1;
+}
+pub use foo::X;
+```
+
+See the Use Declarations section of the reference for more information
+on this topic:
+
+http://doc.rust-lang.org/reference.html#use-declarations
+"##,
+
+E0365: r##"
+Private modules cannot be publicly re-exported.  This error indicates
+that you attempted to write a 'pub use' against a module that was
+not itself public.
+
+Here is an example that demonstrates the error:
+
+```
+mod foo {
+    pub const X: u32 = 1;
+}
+pub use foo as foo2;
+
+```
+The solution to this problem is to ensure that the module that you are
+re-exporting is itself marked with 'pub':
+
+```
+pub mod foo {
+    pub const X: u32 = 1;
+}
+pub use foo as foo2;
+```
+
+See the Use Declarations section of the reference for more information
+on this topic:
+
+http://doc.rust-lang.org/reference.html#use-declarations
 "##
 
 }
@@ -207,7 +267,5 @@ register_diagnostics! {
     E0253, // not directly importable
     E0254, // import conflicts with imported crate in this module
     E0257,
-    E0258,
-    E0364, // item is private
-    E0365  // item is private
+    E0258
 }
